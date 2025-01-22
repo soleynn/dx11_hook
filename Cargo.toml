@@ -1,0 +1,38 @@
+[package]
+name = "dx11_hook"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+path = "src/bin/main.rs"
+name = "dx11_hook_inject"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+retour = "0.3.1"
+sysinfo = "0.33.1"
+pollster = "0.4.0"
+winit = "0.30.8"
+wgpu = "24.0.0"
+
+[dependencies.windows]
+version = "0.59.0"
+features = ["Win32_Foundation", 
+    "Win32_UI_WindowsAndMessaging", 
+    "Win32_System", 
+    "Win32_System_Threading", 
+    "Win32_System_Memory", 
+    "Win32_System_Diagnostics", 
+    "Win32_System_Diagnostics_Debug", 
+    "Win32_System_LibraryLoader", 
+    "Win32_Security", 
+    "Win32_Graphics", 
+    "Win32_Graphics_Gdi",
+    "Win32_Graphics_Direct3D",
+    "Win32_Graphics_Direct3D11",
+    "Win32_Graphics_Dxgi", "Win32_Graphics_Dxgi_Common",
+    "Win32_UI_Input",
+    "Win32_UI_Input_KeyboardAndMouse",
+]
